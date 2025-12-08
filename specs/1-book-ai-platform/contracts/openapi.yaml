@@ -1,0 +1,318 @@
+openapi: 3.0.0
+info:
+  title: AI-Powered Book Platform API
+  version: 1.0.0
+  description: Backend API for the AI-Powered Book Platform, including authentication, RAG chatbot, personalization, and translation services.
+servers:
+  - url: /api/v1
+paths:
+  /auth/signup:
+    post:
+      summary: Register a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - email
+                - password
+                - programming_background
+                - hardware_owned
+                - gpu_availability
+                - linux_familiarity
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+                programming_background:
+                  type: string
+                  enum: [ "beginner", "intermediate", "expert" ]
+                hardware_owned:
+                  type: string
+                gpu_availability:
+                  type: boolean
+                linux_familiarity:
+                  type: string
+                  enum: [ "none", "basic", "proficient" ]
+      responses:
+        '201':
+          description: User registered successfully
+        '400':
+          description: Invalid input
+        '409':
+          description: User already exists
+
+  /auth/login:
+    post:
+      summary: Authenticate user and get access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                  format: password
+      responses:
+        '200':
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  token_type:
+                    type: string
+        '401':
+          description: Invalid credentials
+
+  /user/profile:
+    get:
+      summary: Get user profile
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: User profile details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user_id:
+                    type: string
+                  username:
+                    type: string
+                  email:
+                    type: string
+                  programming_background:
+                    type: string
+                  hardware_owned:
+                    type: string
+                  gpu_availability:
+                    type: boolean
+                  linux_familiarity:
+                    type: string
+                  created_at:
+                    type: string
+                    format: date-time
+        '401':
+          description: Unauthorized
+    put:
+      summary: Update user profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                programming_background:
+                  type: string
+                  enum: [ "beginner", "intermediate", "expert" ]
+                hardware_owned:
+                  type: string
+                gpu_availability:
+                  type: boolean
+                linux_familiarity:
+                  type: string
+                  enum: [ "none", "basic", "proficient" ]
+      responses:
+        '200':
+          description: Profile updated successfully
+        '400':
+          description: Invalid input
+        '401':
+          description: Unauthorized
+
+  /chapters/{chapter_id}:
+    get:
+      summary: Get a specific book chapter
+      parameters:
+        - in: path
+          name: chapter_id
+          schema:
+            type: string
+          required: true
+          description: ID of the chapter to retrieve
+      responses:
+        '200':
+          description: Chapter content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapter_id:
+                    type: string
+                  title:
+                    type: string
+                  content_markdown:
+                    type: string
+        '404':
+          description: Chapter not found
+
+  /chapters/{chapter_id}/personalize:
+    post:
+      summary: Personalize a chapter based on user profile
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: chapter_id
+          schema:
+            type: string
+          required: true
+          description: ID of the chapter to personalize
+      requestBody:
+        required: false # Profile attributes are taken from stored user profile
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                difficulty_level:
+                  type: string
+                  enum: [ "beginner", "intermediate", "expert" ]
+                  description: Override for desired difficulty, if not using profile default
+                learning_speed:
+                  type: string
+                  enum: [ "slow", "medium", "fast" ]
+                  description: Override for desired learning speed, if not using profile default
+      responses:
+        '200':
+          description: Personalized chapter content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapter_id:
+                    type: string
+                  title:
+                    type: string
+                  personalized_content_markdown:
+                    type: string
+        '401':
+          description: Unauthorized
+        '404':
+          description: Chapter not found
+        '500':
+          description: Personalization agent failed
+
+  /chapters/{chapter_id}/translate:
+    post:
+      summary: Translate a chapter to Urdu
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: chapter_id
+          schema:
+            type: string
+          required: true
+          description: ID of the chapter to translate
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - target_language
+              properties:
+                target_language:
+                  type: string
+                  enum: [ "ur" ] # Currently only Urdu is supported
+                  description: The language to translate the chapter into
+      responses:
+        '200':
+          description: Translated chapter content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapter_id:
+                    type: string
+                  title:
+                    type: string
+                  translated_content_markdown:
+                    type: string
+        '401':
+          description: Unauthorized
+        '404':
+          description: Chapter not found
+        '500':
+          description: Translation agent failed
+
+  /chatbot/query:
+    post:
+      summary: Query the RAG chatbot
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query_text
+                - chapter_id
+              properties:
+                query_text:
+                  type: string
+                  description: The user's question
+                chapter_id:
+                  type: string
+                  description: The ID of the chapter context for the query
+                selected_text:
+                  type: string
+                  nullable: true
+                  description: Optional - text selected by the user for context-aware querying
+      responses:
+        '200':
+          description: Chatbot response with citations
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  response_text:
+                    type: string
+                  citations:
+                    type: array
+                    items:
+                      type: string
+        '401':
+          description: Unauthorized
+        '500':
+          description: Chatbot processing failed
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

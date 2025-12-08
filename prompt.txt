@@ -1,0 +1,7 @@
+/sp.implement 
+Stylings
+Keep the theme of the website blue.(Hero section Blue)
+On the hompage each cad should be borders and shadowed with the picture removed from each card the color of the button should be blue.
+Headings font size should be atleast be 40 px if current is more than 40 so increase the font size to 10px otherwise(Homepage)
+keep all other stylings intact
+ 
