@@ -20,7 +20,7 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://Mahad-Usman-15.github.io', // TODO: Replace with your GitHub Pages URL
+  url: 'https://vercel.com/mahad-usmans-projects/physical-ai-and-humanoid-robotics', // TODO: Replace with your GitHub Pages URL
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/', 
