@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Physical AI & Humanoid Robotics Learning Portal API
+  description: |
+    API for the RAG chatbot, user authentication, and interactive content features
+    for the Physical AI & Humanoid Robotics Learning Portal.
+  version: 1.0.0
+
+servers:
+  - url: /api/v1
+    description: API Server
+
+paths:
+  /chat:
+    post:
+      summary: Send a message to the chatbot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  description: The user's message.
+                context:
+                  type: string
+                  description: The user-selected text from the book (optional).
+      responses:
+        '200':
+          description: A streaming response from the chatbot.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+
+  /personalize-chapter:
+    post:
+      summary: Personalize a chapter for the authenticated user
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                chapter_content:
+                  type: string
+                  description: The original content of the chapter to be personalized.
+      responses:
+        '200':
+          description: The personalized chapter content.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  personalized_content:
+                    type: string
+
+  /translate-chapter:
+    post:
+      summary: Translate a chapter to Urdu for the authenticated user
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                chapter_content:
+                  type: string
+                  description: The original content of the chapter to be translated.
+      responses:
+        '200':
+          description: The translated chapter content.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  translated_content:
+                    type: string
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,24 @@
+.authContainer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.authButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.authButton:hover {
+    background-color: #0056b3;
+}
+
+.welcomeMessage {
+    color: #333;
+    font-size: 1em;
+}

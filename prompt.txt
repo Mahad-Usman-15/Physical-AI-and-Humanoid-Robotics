@@ -1,7 +1,62 @@
-/sp.implement 
-Stylings
-Keep the theme of the website blue.(Hero section Blue)
-On the hompage each cad should be borders and shadowed with the picture removed from each card the color of the button should be blue.
-Headings font size should be atleast be 40 px if current is more than 40 so increase the font size to 10px otherwise(Homepage)
-keep all other stylings intact
- 
+Act as a senior DevOps engineer.
+
+Context:
+- The FastAPI backend is already fully implemented.
+- Only GitHub readiness and Railway deployment preparation are left.
+- Frontend (Docusaurus) is already deployed on Vercel.
+- Frontend URL for CORS must be exactly:
+  https://physical-ai-and-humanoid-robotics-red.vercel.app/
+- Backend will be deployed on Railway.
+
+
+Task:
+Inspect the existing backend codebase and apply only the minimal required changes so it can be pushed to GitHub and deployed successfully on Railway.
+The frontend will also have some changes so also push that to the github.
+Required Actions:
+
+1. Railway Compatibility
+- Ensure the FastAPI app starts using:
+  uvicorn main:app --host 0.0.0.0 --port $PORT
+- Do NOT hardcode any port.
+- Ensure Python version compatibility (>=3.10).
+- Do NOT introduce Docker.
+
+2. Environment Variables
+- Remove any hardcoded secrets.
+- Ensure all secrets are read from environment variables only.
+
+
+
+3. CORS (CRITICAL)
+- Verify or update CORS configuration.
+- Allow ONLY this origin:
+  https://physical-ai-and-humanoid-robotics-red.vercel.app
+- Allow credentials, all headers, and all methods.
+
+4. requirements.txt
+- Generate or fix `requirements.txt` so it includes all dependencies actually used by the backend.
+- Ensure `fastapi` and `uvicorn[standard]` are present.
+
+5. .gitignore
+- Create or update `.gitignore` to include:
+  .env
+  .env.*
+  __pycache__/
+  *.pyc
+  .venv/
+  venv/
+  .DS_Store
+  .pytest_cache/
+  .mypy_cache/
+
+
+
+
+Rules:
+- Do NOT refactor application logic.
+- Do NOT change API contracts.
+
+
+Output Format:
+- The result must be ready to commit, push to GitHub, and deploy on Railway immediately.
+

@@ -4,14 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Physical AI & Humanoid Robotics Textbook',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Learn Physical AI & Humanoid Robotics.',
   favicon: 'img/headerphoto.jpg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -22,16 +22,16 @@ const config = {
   // Set the production url of your site here
   url: 'https://physical-ai-and-humanoid-robotics-red.vercel.app/', // TODO: Replace with your GitHub Pages URL
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/', 
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Mahad-Usman-15', // TODO: Replace with your GitHub org/user name.
   projectName: 'Physical-AI-and-Humanoid-Robotics', // TODO: Replace with your repo name.
-
-  onBrokenLinks: 'throw',
-
+  deploymentBranch: "main",
+  onBrokenLinks: 'warn',
+  trailingSlash: false,
+  onBrokenMarkdownLinks: "warn",
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -104,6 +104,11 @@ const config = {
             href: 'https://github.com/Mahad-Usman-15/',
             label: 'GitHub',
             position: 'right',
+          },
+          {
+            type: 'custom-auth-navbar-item',
+            position: 'right',
+            className: 'navbar-auth-item',
           },
         ],
       },

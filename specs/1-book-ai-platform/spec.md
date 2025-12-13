@@ -162,6 +162,7 @@ A user wants to create an account, manage their profile, and have their preferen
 -   **FR-003**: The book content MUST cover topics including Physical AI, Humanoid Robotics, ROS2, Gazebo, NVIDIA Isaac, VLA robotics, Hardware requirements, Cloud vs On-prem lab, and Hackathon tasks.
 -   **FR-004**: The system MUST include a minimal, standard Docusaurus v3 configuration in docusaurus.config.js and package.json for immediate GitHub Pages deployment..
 - **FR-005**:The system MUST create dedicated top-level folders for specs/, docs/chapters/, docs/assets/images/, docs/assets/files/, and backend/.
+
 -   **FR-006**: The RAG Chatbot MUST answer user questions about the book's content.
 -   **FR-007**: The RAG Chatbot MUST provide answers based ONLY on selected text when a user highlights content.
 -   **FR-008**: The RAG Chatbot MUST provide citations for its answers from the book content.

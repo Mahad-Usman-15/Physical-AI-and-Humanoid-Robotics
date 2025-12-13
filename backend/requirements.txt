@@ -1,0 +1,12 @@
+beautifulsoup4
+cohere
+fastapi
+markdown
+openai-agents
+pre-commit
+psycopg2-binary
+pydantic-settings
+python-dotenv
+qdrant-client
+sqlalchemy
+uvicorn[standard]
