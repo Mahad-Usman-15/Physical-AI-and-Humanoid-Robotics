@@ -15,8 +15,7 @@ print("✅ Backend running")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://physical-ai-and-humanoid-robotics-red.vercel.app",
-        "http://localhost:3000",
+        "*",
     ],
     allow_credentials=True,
     allow_methods=["*"],
