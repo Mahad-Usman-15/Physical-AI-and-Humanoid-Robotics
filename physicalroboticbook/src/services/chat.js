@@ -1,5 +1,5 @@
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://physical-ai-and-humanoid-robotics-production-8d25.up.railway.app/';
 
 
 

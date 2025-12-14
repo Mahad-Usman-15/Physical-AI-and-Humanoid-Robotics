@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
-const API_BASE_URL = 'http://localhost:8000'; // Hardcoded for now, will be replaced later
+const API_BASE_URL = 'https://physical-ai-and-humanoid-robotics-production-8d25.up.railway.app/'; // Hardcoded for now, will be replaced later
 
 export const AuthContext = createContext({
   isAuthenticated: false,

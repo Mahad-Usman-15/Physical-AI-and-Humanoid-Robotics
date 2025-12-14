@@ -3,7 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useAuth } from '../../contexts/AuthContext';
 
 // Define the API_BASE_URL (this should eventually come from a Docusaurus config or environment variable)
-const API_BASE_URL = 'http://localhost:8000'; // Hardcoded for now, will be replaced later
+const API_BASE_URL = 'https://physical-ai-and-humanoid-robotics-production-8d25.up.railway.app/'; // Hardcoded for now, will be replaced later
 
 const Auth = () => {
   const {siteConfig} = useDocusaurusContext();
