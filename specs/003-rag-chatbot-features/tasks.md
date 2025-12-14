@@ -23,7 +23,7 @@
 - [X] T007 Set up database connection to NeonDB in `backend/src/database.py`.
 - [X] T008 Set up Qdrant client and connection in `backend/src/qdrant.py`.
 -   [X] T009 [P] Set up Cohere API client in `backend/src/cohere_client.py`.
-- [X] T010 [P] Implement Better-Auth integration in `backend/src/auth.py`.
+- [] T010 [P] Implement Better-Auth integration in `backend/src/auth.py`.
 - [X] T011 Create a data ingestion script `backend/scripts/ingest.py` to process markdown files, generate embeddings, and store them in Qdrant.
 
 ---
@@ -57,7 +57,7 @@
 - [X] T021 [P] [US2] Create an `Auth` React component in `physicalroboticbook/src/components/Auth/index.js` for "Sign In" and "Sign Out" buttons.
 - [X] T022 [US2] Add the `Auth` component to the Docusaurus header.
 - [X] T023 [P] [US2] Implement the frontend logic for handling authentication with Better-Auth.
-- [X] T024 [P] [US2] Create a `/users/me` endpoint in `backend/src/api/users.py` to return the current user's profile.
+- [] T024 [P] [US2] Create a `/users/me` endpoint in `backend/src/api/users.py` to return the current user's profile.
 - [ ] T025 [US2] Protect the `/personalize` and `/translate` endpoints with Better-Auth authentication middleware in the FastAPI backend.
 - [ ] T026 [P] [US2] Create a `users` table in NeonDB to store user profiles.
 - [ ] T027 [US2] Implement logic to save user profile information upon signup.
