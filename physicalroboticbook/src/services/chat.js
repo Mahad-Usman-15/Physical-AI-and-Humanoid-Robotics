@@ -1,8 +1,4 @@
-
-const API_URL = 'https://physical-ai-and-humanoid-robotics-production-8d25.up.railway.app/';
-
-
-
+const API_URL = 'https://mahad02-bookbackend.hf.space';
 
 export const sendMessage = async (message, context = null) => {
     try {
@@ -20,10 +16,10 @@ export const sendMessage = async (message, context = null) => {
 
         // Assuming the backend sends a streaming response or a simple JSON response
         // This part needs to be adapted based on the actual backend implementation
-        const data = await response.json(); 
+        const data = await response.json();
         console.log(data)
         return data;
-        
+
     } catch (error) {
         console.error('Error sending message:', error);
         return { response: 'Sorry, something went wrong.' };

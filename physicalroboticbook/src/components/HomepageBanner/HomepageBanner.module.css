@@ -1,0 +1,12 @@
+.homepageBanner {
+  background: var(--custom-gradient-blue);
+  color: white;
+  padding: 4rem 0;
+  margin-top: 4rem; /* Adds some space from the previous section */
+}
+
+.bannerTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}

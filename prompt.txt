@@ -60,3 +60,151 @@ Rules:
 Output Format:
 - The result must be ready to commit, push to GitHub, and deploy on Railway immediately.
 
+
+
+
+
+
+ /sp.specify
+
+You are a **senior frontend UI/UX engineer & motion designer**.
+Your task is to **enhance ONLY the styling, layout, animations, and responsiveness** of the existing **Physical AI & Humanoid Robotics Book Website** without breaking or modifying **any existing functionality, logic, API calls, or chatbot behavior**.
+
+### 🔒 Core Constraint
+- **All existing functionalities must remain completely untouched**
+- This includes:
+  - Chatbot logic
+  - Authentication (Login / Signup)
+  - Routing
+  - Forms
+  - State management
+  - API integrations
+
+---
+
+### 🎨 Design Theme
+- **Primary Theme:** Blue / Dark Blue / Gradient Blue
+- **Inspiration Websites (Styling Reference Only):**
+  - https://ai-native.panaversity.org/
+  - https://physical-ai-and-humanoid-robotics.vercel.app/
+
+---
+
+### 🧠 Visual Language
+- Modern, futuristic, AI-native feel
+- Clean spacing, soft shadows, smooth transitions
+- Subtle motion to increase perceived quality
+- Accessibility-friendly contrast & typography
+
+---
+
+### 🔘 Buttons
+- All buttons must:
+  - Use **dark blue → lighter blue gradient**
+  - Have **soft shadows**
+  - Include **hover animations**:
+    - Slight scale-up
+    - Glow or shadow enhancement
+    - Smooth easing (`ease-in-out`)
+- CTA buttons must stand out visually
+
+---
+
+### 🦸 Hero Section (Homepage)
+- Layout inspired by: https://ai-native.panaversity.org/
+- Features:
+  - Full-width **gradient blue background**
+  - Two-column layout:
+    - **Left:** Headline + subtext + CTA
+    - **Right:** Illustration / visual (if exists)
+  - Headings must be **fully responsive**
+  - Large bold headline with gradient blue text accents
+
+---
+
+### 🧱 Cards & Sections
+- All cards should:
+  - Have borders
+  - Soft shadows
+  - Rounded corners
+  - Gradient blue text highlights
+- Add **new homepage sections** such as:
+  - Why Physical AI?
+  - What You’ll Learn
+  - Book Modules Overview
+  - Future of Humanoid Robotics
+- Use **smooth reveal animations** (fade, slide-up, staggered)
+
+---
+
+### 📢 Homepage Final Banner
+- At the **end of the homepage**, add a banner section:
+  - Text:
+    **“Ready to Read Physical AI & Humanoid Robotics?”**
+  - Prominent CTA button
+  - Gradient background
+  - Centered layout
+  - Strong visual hierarchy
+
+---
+
+### 🤖 Chatbot Styling (Functionality MUST NOT change)
+- Add text **above the chat icon**:
+  - “Ask AI”
+- Chatbot button:
+  - Icon-based (chat icon)
+  - Gradient blue background
+  - Hover animation
+- Chat window:
+  - Fully **mobile responsive**
+  - Smooth open/close animation
+  - Clean message bubbles
+- Loader:
+  - Show **three animated dots** when AI is responding
+- ⚠️ Do NOT affect chatbot logic or message handling
+
+---
+
+### 🔐 Auth Pages
+- Create dedicated pages for:
+  - **Signup**
+  - **Login**
+- Styling:
+  - Centered card layout
+  - Gradient buttons
+  - Soft shadows
+  - Consistent with overall theme
+
+---
+
+### 🧾 Footer
+- Footer must:
+  - Match blue theme
+  - Include **Modules list**
+  - Clean grid layout
+  - Subtle hover effects on links
+
+---
+
+### 🌊 Animations
+- Use smoother animations throughout:
+  - Page transitions
+  - Hover effects
+  - Scroll-based reveals
+- Animations should feel **premium and non-distracting**
+
+Apply these stylings in physicalroboticbook and make sure you did not make any branch work on main branch
+
+ /sp.plan
+
+1. Analyze current UI structure and components
+2. Identify all areas where styling can be enhanced without touching logic
+3. Apply consistent blue gradient theme across components
+4. Redesign hero section to match reference layout
+5. Improve cards, sections, and spacing
+6. Add new homepage sections visually (no logic changes)
+7. Enhance chatbot UI only (no behavior changes)
+8. Style Login & Signup pages
+9. Upgrade footer with modules and better layout
+10. Apply smooth, performant animations
+11. Ensure full responsiveness (mobile, tablet, desktop)

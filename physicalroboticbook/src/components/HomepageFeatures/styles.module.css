@@ -6,18 +6,32 @@
   width: 100%;
 }
 
+.features .row {
+    justify-content: center;
+}
+
 .featureCard {
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-  padding: 1rem;
+  border: 1px solid var(--custom-blue-light);
+  border-radius: 8px;
+  box-shadow: var(--custom-shadow-soft);
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  padding: 1.5rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
 }
 
 .featureCard:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

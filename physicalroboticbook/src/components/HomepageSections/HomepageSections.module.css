@@ -1,0 +1,12 @@
+.homepageSections {
+  padding: 4rem 0;
+}
+
+.homepageSections .row {
+    justify-content: center;
+}
+
+.sectionSvg {
+  height: 200px;
+  width: 200px;
+}

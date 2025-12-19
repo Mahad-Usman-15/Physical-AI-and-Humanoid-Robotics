@@ -14,10 +14,7 @@ print("✅ Backend running")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "https://physical-ai-and-humanoid-robotics-red.vercel.app",
-        "http://localhost:3000",
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -29,7 +26,9 @@ async def preflight_handler(path: str):
     return {}
 
 
-app.include_router(chat.router, prefix="/api/v1")
+app.include_router(
+    chat.router, prefix="/api/v1"
+)  # noqa: E501
 # app.include_router(users.router, prefix="/api/v1/users") # users router is not yet implemented fully
 
 
