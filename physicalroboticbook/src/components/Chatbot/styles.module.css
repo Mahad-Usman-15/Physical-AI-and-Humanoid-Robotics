@@ -78,6 +78,15 @@
     flex-grow: 1; /* Allow title to take available space */
 }
 
+.closeButton {
+    display: none; /* Hidden by default */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 .chatMessages {
     flex-grow: 1;
     padding: 15px;
@@ -194,6 +203,10 @@
 
     .chatbotContainer {
         z-index: 10000;
+    }
+
+    .closeButton {
+        display: block; /* Show the button on mobile */
     }
 }
 

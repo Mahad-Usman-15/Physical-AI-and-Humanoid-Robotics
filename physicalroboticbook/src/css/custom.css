@@ -35,7 +35,7 @@
   /* Custom Theme Dark Mode */
   --custom-blue-dark: #0a1421;
   --custom-blue-light: #1a3a6e;
-  --custom-card-bg-dark: var(--custom-blue-light);
+  --custom-card-bg-dark: transparent;
   --custom-card-border-dark: #2a5a9e; /* New variable for dark mode card border */
 }
 

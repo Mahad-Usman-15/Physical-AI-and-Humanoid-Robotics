@@ -63,6 +63,7 @@ const Chatbot = () => {
                     <div className={styles.chatHeader}>
                         <h2>Chat with our AI</h2>
                         <button onClick={handleUseSelectedText} className={styles.contextButton}>Use Selected Text</button>
+                        <button onClick={toggleChat} className={styles.closeButton}>×</button>
                     </div>
                     <div className={styles.chatMessages}>
                         {messages.map((msg, index) => (
