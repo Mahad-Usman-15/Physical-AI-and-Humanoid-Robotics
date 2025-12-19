@@ -97,9 +97,9 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className={clsx('row', styles.gridRow)}>
           {ModuleList.map((props, idx) => (
-            <Feature key={idx} {...props} className="col--3" />
+            <Feature key={idx} {...props} />
           ))}
         </div>
         <div className="row">
@@ -107,9 +107,9 @@ export default function HomepageFeatures() {
                 <Heading as="h2" className="padding-top--lg">Why This Book is Important</Heading>
             </div>
         </div>
-        <div className="row">
+        <div className={clsx('row', styles.gridRow)}>
           {ImportanceList.map((props, idx) => (
-            <Feature key={idx} {...props} className="col--4" />
+            <Feature key={idx} {...props} />
           ))}
         </div>
       </div>

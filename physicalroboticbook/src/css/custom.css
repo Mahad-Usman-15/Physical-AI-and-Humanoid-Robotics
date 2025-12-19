@@ -106,7 +106,8 @@
 /* Card styles for dark mode */
 [data-theme='dark'] .card {
   background-color: var(--custom-card-bg-dark);
-  border: 1px solid var(--custom-card-border-dark);
+  border: 1px solid var(--ifm-color-primary-lightest);
+  color: white;
 }
 
 
