@@ -31,7 +31,7 @@ function HomepageHeader() {
             </div>
           </div>
           <div className="col col--6">
-            <img src="/img/headerphoto.jpg" alt="Hero Image" className={styles.heroImage} />
+            <img src="/img/herophoto.jpg" alt="Hero Image" className={styles.heroImage} />
           </div>
         </div>
       </div>
