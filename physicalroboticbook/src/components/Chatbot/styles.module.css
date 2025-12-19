@@ -184,14 +184,12 @@
         max-width: none;
         max-height: none;
         border-radius: 0; /* No border-radius for full screen */
-        background-color: rgba(255, 0, 0, 0.5) !important; /* DEBUG: Red background */
-        z-index: 9999 !important; /* DEBUG: Force z-index */
+        background-color: var(--custom-blue-dark);
+        z-index: 9999;
     }
 
     .chatbotContainer {
-        /* The container doesn't need to be positioned differently */
-        background-color: rgba(0, 255, 0, 0.5) !important; /* DEBUG: Green background */
-        z-index: 9998 !important; /* DEBUG: Force z-index */
+        z-index: 10000;
     }
 }
 

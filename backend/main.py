@@ -26,9 +26,7 @@ async def preflight_handler(path: str):
     return {}
 
 
-app.include_router(
-    chat.router, prefix="/api/v1"
-)  # noqa: E501
+app.include_router(chat.router, prefix="/api/v1")  # noqa: E501
 # app.include_router(users.router, prefix="/api/v1/users") # users router is not yet implemented fully
 
 

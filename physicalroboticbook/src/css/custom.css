@@ -35,7 +35,7 @@
   /* Custom Theme Dark Mode */
   --custom-blue-dark: #0a1421;
   --custom-blue-light: #1a3a6e;
-  --custom-card-bg-dark: #1f4277; /* New variable for dark mode card background */
+  --custom-card-bg-dark: var(--custom-blue-light);
   --custom-card-border-dark: #2a5a9e; /* New variable for dark mode card border */
 }
 
@@ -247,4 +247,18 @@
 
 .footer__title {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
 }
