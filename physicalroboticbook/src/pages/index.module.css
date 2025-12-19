@@ -51,6 +51,10 @@
   .heroSubtitle {
     font-size: 1.2rem;
   }
+  .heroImage {
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure it takes up full width for centering */
+  }
 }
 
 .buttons {
